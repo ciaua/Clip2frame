@@ -130,7 +130,7 @@ if __name__ == '__main__':
                      for feat_fp in feat_fp_list]
 
         # standardize
-        feat_list = [standardizer.transform(feat)
+        feat_list = [standardizer.fit_transform(feat)
                      for feat, standardizer in zip(feat_list, std_list)]
 
         feat_list = [feat[None, None, :].astype('float32')
